@@ -1,0 +1,9 @@
+flake8
+flake8-black
+flake8-isort
+pdbpp
+pip-tools
+pytest
+pytest-icdiff
+pytest-coverage
+responses
