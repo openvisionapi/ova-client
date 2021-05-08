@@ -1,4 +1,4 @@
-## OpenVisionAPI Cient
+## OpenVisionAPI Client
 
 ## 🚀 Getting Started
 
