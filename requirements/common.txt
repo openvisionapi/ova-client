@@ -14,6 +14,8 @@ idna==2.10
     # via requests
 pillow==8.1.2
     # via -r requirements/common.in
+pygments==2.9.0
+    # via -r requirements/common.in
 requests==2.25.1
     # via -r requirements/common.in
 urllib3==1.26.4
