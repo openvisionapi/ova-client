@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+import json
 from pathlib import Path
 
 import click
 import requests
+from pygments import formatters, highlight, lexers
 
 from config import config
 from validators import validate_image
@@ -17,8 +19,11 @@ def cli():
 
 @cli.command()
 @click.option("-s", "--save", flag_value=True, help="Save the output image.")
+@click.option(
+    "-v", "--visualize", flag_value=True, help="Draw bounding boxes on the detected objects."
+)
 @click.argument("image", type=click.Path(exists=True))
-def detection(image, save):
+def detection(image, save, visualize):
 
     mimetype = validate_image(image)
 
@@ -33,6 +38,11 @@ def detection(image, save):
         raise SystemExit(e)
 
     predictions = response.json()["predictions"]
+
+    if not visualize:
+        output = json.dumps(predictions, indent=4, sort_keys=True)
+        print(highlight(output, lexers.JsonLexer(), formatters.TerminalFormatter()))
+        return
 
     img = visualize_image_predictions(image, predictions)
 
