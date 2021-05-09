@@ -16,6 +16,17 @@ $ source .venv/bin/activate
 $ ./ova_client.py detection /path/to/image
 ```
 
+The available options for the cli:
+```
+./ova_client.py detection --help
+Usage: ova_client.py detection [OPTIONS] IMAGE
+
+Options:
+  -s, --save       Save the output image.
+  -v, --visualize  Draw bounding boxes on the detected objects.
+  --help           Show this message and exit.
+```
+
 ### Demo
 ```
 $ make demo
