@@ -11,7 +11,7 @@ setup:
 demo:
 	@(\
 	    source .venv/bin/activate && \
-	    ./ova_client.py detection images/cat.jpeg \
+	    ./ova_client.py detection --visualize images/cat.jpeg \
 	)
 
 test:
