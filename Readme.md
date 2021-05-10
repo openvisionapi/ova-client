@@ -77,6 +77,7 @@ The configuration can be set up using the following env variables:
 - [Pillow](https://github.com/python-pillow/Pillow)
 - [click](https://github.com/pallets/click)
 - [requests](https://github.com/psf/requests)
+- [pygments](https://github.com/pygments/pygments)
 
 ## ✍️  Author
 [Badr BADRI](https://github.com/pythops)
