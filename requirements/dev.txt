@@ -14,11 +14,11 @@ certifi==2020.12.5
     # via requests
 chardet==4.0.0
     # via requests
-click==8.0.0
+click==8.0.1
     # via
     #   black
     #   pip-tools
-coverage==5.5
+coverage[toml]==5.5
     # via pytest-cov
 fancycompleter==0.9.1
     # via pdbpp
@@ -69,7 +69,7 @@ pyparsing==2.4.7
     # via packaging
 pyrepl==0.9.0
     # via fancycompleter
-pytest-cov==2.11.1
+pytest-cov==2.12.0
     # via pytest-cover
 pytest-cover==3.0.0
     # via pytest-coverage
