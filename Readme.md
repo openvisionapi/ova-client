@@ -1,4 +1,4 @@
-## OpenVisionAPI Client
+g# OpenVisionAPI Client
 
 ## 🚀 Getting Started
 
@@ -27,7 +27,7 @@ Options:
   --help           Show this message and exit.
 ```
 
-### Demo
+### Quick demo
 ```
 $ make demo
 ```
@@ -36,14 +36,6 @@ $ make demo
 ```
 $ pip install --user httpie
 $ http -f POST https://api.openvisionapi.com/api/v1/detection  model="yolov4" image@images/cat.jpeg
-
-HTTP/1.1 200 OK
-Connection: keep-alive
-Content-Length: 128
-Content-Type: application/json
-Date: Sat, 08 May 2021 18:08:03 GMT
-Server: nginx
-Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
 
 {
     "description": "Detected objects",
@@ -62,6 +54,28 @@ Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
 }
 ```
 
+### Want to use curl ?
+```
+$ curl -X POST https://api.openvisionapi.com/api/v1/detection \
+  -F "model=yolov4" \
+  -F "image=@images/cat.jpeg"
+
+{
+  "description": "Detected objects",
+  "predictions": [
+    {
+      "bbox": {
+        "x1": 442,
+        "x2": 982,
+        "y1": 199,
+        "y2": 1270
+      },
+      "label": "cat",
+      "score": "0.93"
+    }
+  ]
+}
+```
 
 ### Configuration
 The configuration can be set up using the following env variables:
