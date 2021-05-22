@@ -10,7 +10,8 @@ def draw_bounding_boxe_on_image(image, bounding_boxe, score, label, color, text_
 
     draw.rectangle(((x1, y1), (x2, y2)), outline=color, width=3)
 
-    font = ImageFont.load_default()
+    font = ImageFont.truetype("fonts/Montserrat-Regular.ttf", 20)
+
     text_x, text_y = font.getsize(label)
     draw.rectangle(((x1, y1), (x1 + text_x, y1 - text_y)), fill=color)
     draw.text((x1, y1 - text_y), text=label, fill="white", font=font)
@@ -20,7 +21,7 @@ def visualize_image_predictions(image, predictions):
     img = Image.open(image)
     labels = set([prediction["label"] for prediction in predictions])
     colors = {
-        label: (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        label: (random.randint(0, 200), random.randint(0, 200), random.randint(0, 200))
         for label in labels
     }
     for prediction in predictions:
