@@ -1,4 +1,4 @@
-g# OpenVisionAPI Client
+# OpenVisionAPI Client
 
 ## 🚀 Getting Started
 
