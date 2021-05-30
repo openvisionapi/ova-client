@@ -18,5 +18,5 @@ pygments==2.9.0
     # via -r requirements/common.in
 requests==2.25.1
     # via -r requirements/common.in
-urllib3==1.26.4
+urllib3==1.26.5
     # via requests
