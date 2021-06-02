@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements/common.txt requirements/common.in
 #
-certifi==2020.12.5
+certifi==2021.5.30
     # via requests
 chardet==4.0.0
     # via requests
