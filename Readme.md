@@ -1,4 +1,10 @@
-# OpenVisionAPI Client
+<div align="center">
+<h1> OpenVisionAPI Client </h1>
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
+</div>
 
 ## 🚀 Getting Started
 
