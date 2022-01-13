@@ -32,7 +32,6 @@ dev:
 
 pip-update:
 	@(\
-	    source .venv/bin/activate &&  \
 	    pip-compile --output-file=requirements/common.txt -U requirements/common.in && \
 	    pip-compile --output-file=requirements/dev.txt -U requirements/dev.in \
 	)
