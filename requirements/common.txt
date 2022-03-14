@@ -6,13 +6,13 @@
 #
 certifi==2021.10.8
     # via requests
-charset-normalizer==2.0.10
+charset-normalizer==2.0.12
     # via requests
-click==8.0.3
+click==8.0.4
     # via -r requirements/common.in
 idna==3.3
     # via requests
-pillow==9.0.0
+pillow==9.0.1
     # via -r requirements/common.in
 pygments==2.11.2
     # via -r requirements/common.in
