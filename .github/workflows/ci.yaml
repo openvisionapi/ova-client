@@ -2,10 +2,16 @@ name: CI
 on: [push]
 jobs:
   tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@master
         with:
           fetch-depth: 1
-      - run: make dev
-      - run: make test
+
+      - uses: taiki-e/install-action@just
+
+      - name: Setup dependencies
+        run: just dev
+
+      - name: Run test
+        run: just test
