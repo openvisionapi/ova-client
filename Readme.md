@@ -10,19 +10,25 @@
 
 ### Prerequisites
 
-### Installing
+You'll need to have [just](https://github.com/casey/just) installed in your system.
+
+### Setup
+
 Install the dependencies
+
 ```
-$ make setup
+$ just setup
 ```
 
 ### Usage
+
 ```
 $ source .venv/bin/activate
 $ ./ova_client.py detection /path/to/image
 ```
 
 The available options for the cli:
+
 ```
 ./ova_client.py detection --help
 Usage: ova_client.py detection [OPTIONS] IMAGE
@@ -33,12 +39,14 @@ Options:
   --help           Show this message and exit.
 ```
 
-### Quick demo
+### Quick demo (Will come soon)
+
 ```
-$ make demo
+$ just demo
 ```
 
 ### Want to use httpie ?
+
 ```
 $ pip install --user httpie
 $ http -f POST https://api.openvisionapi.com/api/v1/detection  model="yolov4" image@images/cat.jpeg
@@ -61,6 +69,7 @@ $ http -f POST https://api.openvisionapi.com/api/v1/detection  model="yolov4" im
 ```
 
 ### Want to use curl ?
+
 ```
 $ curl -X POST https://api.openvisionapi.com/api/v1/detection \
   -F "model=yolov4" \
@@ -84,6 +93,7 @@ $ curl -X POST https://api.openvisionapi.com/api/v1/detection \
 ```
 
 ### Configuration
+
 The configuration can be set up using the following env variables:
 
 **DETECTION_URL** : The URL to the OpenVisionAPI server. The default is `https://api.openvisionapi.com/api/v1/detection`
@@ -92,37 +102,46 @@ The configuration can be set up using the following env variables:
 
 **RESULT_DIR** : The directory where to store the result. The default is `./results`
 
+## ⛏️ Built Using
 
-## ⛏️  Built Using
 - [Pillow](https://github.com/python-pillow/Pillow)
 - [click](https://github.com/pallets/click)
 - [requests](https://github.com/psf/requests)
 - [pygments](https://github.com/pygments/pygments)
 
-## ✍️  Author
-[Badr BADRI](https://github.com/pythops)
+## ✍️ Author
+
+Badr BADRI [@pythops](https://github.com/pythops)
 
 ## 🤝 Contributing
+
 Your contributions are welcome !
 
 ### Setting up development environment
+
 To setup the development environment, simply run this command
+
 ```
-$ make dev
+$ just dev
 ```
+
 ### Code-style checks
+
 [black](https://github.com/psf/black) is used for code formatting.
 
 [mypy](https://github.com/python/mypy) is used for static typing.
 
 ## 🔧 Tests
+
 To run the tests, simply run those commands
+
 ```
-$ make dev
-$ make test
+$ just dev
+$ just test
 ```
 
-## ⚖️  License
+## ⚖️ License
+
 AGPLv3
 
-Copyright © 2021 Badr BADRI @pythops
+Copyright © Badr BADRI [@pythops](https://github.com/pythops)
