@@ -5,5 +5,5 @@ pdbpp
 pip-tools
 pytest
 pytest-icdiff
-pytest-coverage
+pytest-cov
 responses
