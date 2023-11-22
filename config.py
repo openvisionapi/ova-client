@@ -2,10 +2,11 @@ import os
 
 
 class Config:
-    DETECTION_URL = os.getenv("DETECTION_URL", "https://api.openvisionapi.com/api/v1/detection")
-    DETECTION_MODEL = os.getenv("DETECTION_MODEL", "yolov4")
+    OVA_DETECTION_URL = os.getenv(
+        "OVA_DETECTION_URL", "https://api.openvisionapi.com/api/v1/detection"
+    )
 
-    RESULT_DIR = os.getenv("RESULT_DIR", "results")
+    OVA_OUTPUT_DIR = os.getenv("OVA_OUTPUT_DIR", "output")
 
 
 config = Config()

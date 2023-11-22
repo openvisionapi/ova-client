@@ -8,6 +8,7 @@ import requests
 from pygments import formatters, highlight, lexers
 
 from config import config
+from src.consts import DetectionModels
 from src.validators import validate_image
 from src.visualize import visualize_image_predictions
 
@@ -29,9 +30,9 @@ def cli():
 def detection(image, save, visualize):
     mimetype = validate_image(image)
 
-    url = config.DETECTION_URL
+    url = config.OVA_DETECTION_URL
     files = {"image": (image, open(image, "rb"), mimetype)}
-    body = {"model": config.DETECTION_MODEL}
+    body = {"model": DetectionModels.YOLOV4.value}
 
     try:
         response = requests.post(url=url, files=files, data=body)
@@ -49,7 +50,7 @@ def detection(image, save, visualize):
     img = visualize_image_predictions(image, predictions)
 
     if save:
-        result_dir = config.RESULT_DIR
+        result_dir = config.OVA_OUTPUT_DIR
         Path(result_dir).mkdir(parents=True, exist_ok=True)
         path = Path(f"{result_dir}/{Path(image).name}")
         img.save(path)
