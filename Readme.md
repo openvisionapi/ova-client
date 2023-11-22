@@ -10,7 +10,10 @@
 
 ### Prerequisites
 
-You'll need to have [just](https://github.com/casey/just) installed in your system.
+You'll need to install:
+
+- [just](https://github.com/casey/just)
+- [poetry](https://python-poetry.org/)
 
 ### Setup
 
@@ -23,26 +26,19 @@ $ just setup
 ### Usage
 
 ```
-$ source .venv/bin/activate
-$ ./ova_client.py detection /path/to/image
+$ poetry run ./ova.py detection /path/to/image
 ```
 
 The available options for the cli:
 
-```
-./ova_client.py detection --help
+```bashh
+poetry run ./ova.py detection --help
 Usage: ova_client.py detection [OPTIONS] IMAGE
 
 Options:
   -s, --save       Save the output image.
   -v, --visualize  Draw bounding boxes on the detected objects.
   --help           Show this message and exit.
-```
-
-### Quick demo (Will come soon)
-
-```
-$ just demo
 ```
 
 ### Want to use httpie ?
@@ -109,10 +105,6 @@ The configuration can be set up using the following env variables:
 - [requests](https://github.com/psf/requests)
 - [pygments](https://github.com/pygments/pygments)
 
-## ✍️ Author
-
-Badr BADRI [@pythops](https://github.com/pythops)
-
 ## 🤝 Contributing
 
 Your contributions are welcome !
@@ -127,9 +119,10 @@ $ just dev
 
 ### Code-style checks
 
-[black](https://github.com/psf/black) is used for code formatting.
+ruff and mypy are used to ensure that contributions are stylized in a uniform manner.
 
-[mypy](https://github.com/python/mypy) is used for static typing.
+- [Ruff](https://github.com/astral-sh/ruff) is used as a linter and a code formatter.
+- [mypy](https://github.com/python/mypy) is used for static typing
 
 ## 🔧 Tests
 
@@ -143,5 +136,3 @@ $ just test
 ## ⚖️ License
 
 AGPLv3
-
-Copyright © Badr BADRI [@pythops](https://github.com/pythops)
