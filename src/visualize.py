@@ -3,15 +3,19 @@ import random
 from PIL import Image, ImageDraw, ImageFont
 
 
-def get_prediction_mask(image, bounding_boxe, score, label, color, text_offset=10, opacity=96):
+def get_prediction_mask(
+    image, bounding_boxe, score, label, color, text_offset=10, opacity=96
+):
     x1, y1, x2, y2 = bounding_boxe
 
     mask = Image.new("RGBA", image.size, color + (0,))
     draw = ImageDraw.Draw(mask)
 
     font = ImageFont.truetype("fonts/Montserrat-Regular.ttf", 20)
-    text_x, text_y = font.getsize(label)
-    draw.rectangle(((x1, y1), (x1 + text_x, y1 - text_y)), fill=color + (opacity,))
+    text_bbox = font.getbbox(label)
+    text_x = font.getlength(label)
+    text_y = text_bbox[2] - text_bbox[0]
+    draw.rectangle([(x1, y1 - text_y), (x1 + text_x, y1)], fill=color + (opacity,))
     draw.text((x1, y1 - text_y), text=label, fill="white", font=font)
 
     draw.rectangle(((x1, y1), (x2, y2)), fill=color + (opacity,))
@@ -50,7 +54,11 @@ def visualize_image_predictions(image, predictions):
         color = colors[label]
 
         mask = get_prediction_mask(
-            image=img, bounding_boxe=bounding_boxe, score=score, label=label, color=color
+            image=img,
+            bounding_boxe=bounding_boxe,
+            score=score,
+            label=label,
+            color=color,
         )
         masks.append(mask)
 

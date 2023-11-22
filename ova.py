@@ -8,8 +8,8 @@ import requests
 from pygments import formatters, highlight, lexers
 
 from config import config
-from validators import validate_image
-from visualize import visualize_image_predictions
+from src.validators import validate_image
+from src.visualize import visualize_image_predictions
 
 
 @click.group()
@@ -20,11 +20,13 @@ def cli():
 @cli.command()
 @click.option("-s", "--save", flag_value=True, help="Save the output image.")
 @click.option(
-    "-v", "--visualize", flag_value=True, help="Draw bounding boxes on the detected objects."
+    "-v",
+    "--visualize",
+    flag_value=True,
+    help="Draw bounding boxes on the detected objects.",
 )
 @click.argument("image", type=click.Path(exists=True))
 def detection(image, save, visualize):
-
     mimetype = validate_image(image)
 
     url = config.DETECTION_URL
