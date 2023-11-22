@@ -35,7 +35,7 @@ line-ending = "auto"
 #
 
 [tool.poetry]
-name = "ova-client-py"
+name = "ova"
 version = "0.1.0"
 description = "Open Vision API Python Client"
 authors = ["pythops <contact@pythops.com>"]
@@ -59,7 +59,7 @@ pytest-asyncio = "*"
 pytest-icdiff = "*"
 pytest-coverage = "*"
 mypy = "*"
-responses = "^0.24.1"
+responses = "*"
 
 [build-system]
 requires = ["poetry-core"]
