@@ -142,3 +142,4 @@ config.env
 
 # Results dir
 results/
+output/
