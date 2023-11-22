@@ -20,9 +20,9 @@ def test_detection_cli_with_visualize_option(tmpdir, monkeypatch):
             }
         ],
     }
-    responses.add(responses.POST, config.DETECTION_URL, json=detection_response)
+    responses.add(responses.POST, config.OVA_DETECTION_URL, json=detection_response)
 
-    monkeypatch.setattr(config, "RESULT_DIR", str(tmpdir))
+    monkeypatch.setattr(config, "OVA_OUTPUT_DIR", str(tmpdir))
 
     with patch("random.randint", return_value=0):
         runner = CliRunner()
@@ -54,7 +54,7 @@ def test_detection_cli_without_visualize_option():
             }
         ],
     }
-    responses.add(responses.POST, config.DETECTION_URL, json=detection_response)
+    responses.add(responses.POST, config.OVA_DETECTION_URL, json=detection_response)
 
     runner = CliRunner()
     result = runner.invoke(cli, ["detection", "testdata/detection/input_image.jpeg"])
