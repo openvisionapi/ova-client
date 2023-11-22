@@ -3,7 +3,7 @@ default:
 
 setup:
     #!/usr/bin/env bash
-    poetry install --group main
+    poetry install --only main
 
 dev:
     #!/usr/bin/env bash
