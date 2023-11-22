@@ -1,8 +1,7 @@
 <div align="center">
 <h1> OpenVisionAPI Client </h1>
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+![Static Badge](https://img.shields.io/badge/AGPLV3-License?style=for-the-badge&label=LIcense)
 
 </div>
 
@@ -19,7 +18,7 @@ You'll need to install:
 
 Install the dependencies
 
-```
+```bash
 $ just setup
 ```
 
@@ -32,7 +31,7 @@ $ poetry run ./ova.py detection /path/to/image
 The available options for the cli:
 
 ```bashh
-poetry run ./ova.py detection --help
+$ poetry run ./ova.py detection --help
 Usage: ova_client.py detection [OPTIONS] IMAGE
 
 Options:
@@ -92,11 +91,11 @@ $ curl -X POST https://api.openvisionapi.com/api/v1/detection \
 
 The configuration can be set up using the following env variables:
 
-**DETECTION_URL** : The URL to the OpenVisionAPI server. The default is `https://api.openvisionapi.com/api/v1/detection`
+**OVA_DETECTION_URL** : The URL to the OpenVisionAPI server. The default is `https://api.openvisionapi.com/api/v1/detection`
 
-**DETECTION_MODEL** : The object detection model to use. The default is `yolov4`
+**OVA_OUTPUT_DIR** : The directory where to store the result. The default is `./output`
 
-**RESULT_DIR** : The directory where to store the result. The default is `./results`
+<br>
 
 ## ⛏️ Built Using
 
@@ -104,6 +103,8 @@ The configuration can be set up using the following env variables:
 - [click](https://github.com/pallets/click)
 - [requests](https://github.com/psf/requests)
 - [pygments](https://github.com/pygments/pygments)
+
+<br>
 
 ## 🤝 Contributing
 
@@ -113,7 +114,7 @@ Your contributions are welcome !
 
 To setup the development environment, simply run this command
 
-```
+```bash
 $ just dev
 ```
 
@@ -121,17 +122,21 @@ $ just dev
 
 ruff and mypy are used to ensure that contributions are stylized in a uniform manner.
 
-- [Ruff](https://github.com/astral-sh/ruff) is used as a linter and a code formatter.
+- [ruff](https://github.com/astral-sh/ruff) is used as a linter and a code formatter.
 - [mypy](https://github.com/python/mypy) is used for static typing
+
+<br>
 
 ## 🔧 Tests
 
 To run the tests, simply run those commands
 
-```
+```bash
 $ just dev
 $ just test
 ```
+
+<br>
 
 ## ⚖️ License
 
