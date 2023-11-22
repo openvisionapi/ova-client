@@ -3,31 +3,21 @@ default:
 
 setup:
     #!/usr/bin/env bash
-    python3 -m venv .venv &&
-    source .venv/bin/activate &&
-    pip3 install -U pip &&
-    pip3 install -r requirements/common.txt
+    poetry install --group main
 
 dev:
     #!/usr/bin/env bash
-    python3 -m venv .venv &&
-    source .venv/bin/activate &&
-    pip3 install -U pip &&
-    pip3 install -r requirements/common.txt &&
-    pip3 install -r requirements/dev.txt
+    poetry install
 
 demo:
     #!/usr/bin/env bash
     python3 -m venv .venv &&
-    ./ova_client.py detection --visualize images/cat.jpeg
+    poetry run ./ova.py detection --visualize images/cat.jpeg
 
-pip-update:
+update:
     #!/usr/bin/env bash
-    pip-compile --output-file=requirements/common.txt -U requirements/common.in --resolver=backtracking &&
-    pip-compile --output-file=requirements/dev.txt -U requirements/dev.in --resolver=backtracking
+    poetry update
 
 test:
     #!/usr/bin/env bash
-    source .venv/bin/activate &&
-    flake8 &&
-    pytest tests
+    poetry run pytest tests
